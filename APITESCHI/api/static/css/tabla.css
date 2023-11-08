@@ -1,0 +1,43 @@
+body {
+    background-color: #4b4f47; /* Puedes usar un color en lugar de una imagen */
+   
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #333;
+    text-align: left;
+}
+
+th, td {
+    padding: 8px;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #784141;
+}
+
+a.btn-primary {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+h1 {
+    color: #1c1817;      /* Cambia el color del texto a un tono naranja */
+    font-size: 36px;     /* Cambia el tamaño de fuente a 36 píxeles */
+    text-align: center; /* Centra el texto horizontalmente en su contenedor */
+    font-weight: bold;  /* Hace que el texto sea negrita */
+    /* Agrega otros estilos según tus preferencias */
+}

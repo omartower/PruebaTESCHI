@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mm57n^vn5ttwkq1(1(1j2qr*-s1&*u^r^^q*l)j@dxnt39s2--
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -81,6 +81,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+DATABASES={
+    'default'
+}
 
 
 # Password validation
@@ -125,3 +128,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'omarcitob13b13@gmail.com'
+EMAIL_HOST_PASSWORD = 'hjkx blwk hfrx iucl'

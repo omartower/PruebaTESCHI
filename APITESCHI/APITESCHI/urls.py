@@ -15,7 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from api.views import Home,Login_p,servicios,personas,Acerca,tabla_personas,exportar_personas_csv
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
+    path('',Home.as_view(),name='index'),
+    path('login_p/',Login_p.as_view(),name='Login_p'),
+    path('servicios/',servicios.as_view(),name='servicios'),
+    path('Acerca/',Acerca.as_view(),name='Acerca'),
+    path('personas/',personas.as_view(),name='personas'),
+    path('tabla-personas/', tabla_personas, name='tabla_personas'),
+    path('exportar-csv/', exportar_personas_csv, name='exportar_personas_csv'),
+    
+         
 ]
+

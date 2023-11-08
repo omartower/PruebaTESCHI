@@ -1,0 +1,45 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tabla.css' %}">
+
+    <title>Tabla de Personas</title>
+</head>
+<body>
+    <h1> Tabla Personas </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Correo</th>
+            </tr>
+            
+            <tr>
+                <td>Omar</td>
+                <td>24</td>
+                <td>omar_torrez@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Aislin</td>
+                <td>22</td>
+                <td>aislin@gmail.com</td>
+            </tr>
+            
+            
+        </thead>
+        <tbody>
+            {% for persona in personas %}
+                <tr>
+                    <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.edad }}</td>
+                    <td>{{ persona.correo }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'exportar_personas_csv' %}" class="btn btn-primary">Exportar a CSV</a>
+</body>
+</html>
