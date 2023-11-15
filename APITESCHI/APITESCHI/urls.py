@@ -30,6 +30,6 @@ urlpatterns = [
     #path('exportar-csv/', exportar_personas_csv, name='exportar_personas_csv'),
     path('search/', search_books, name='search_books'),
     path('admin/', admin.site.urls),
-    path('books/', include('APIDJANGOTOWER.urls')),        
+    path('books/', include('myapp.urls')),        
 ]
 
