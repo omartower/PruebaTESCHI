@@ -79,3 +79,25 @@ class Acerca(APIView):
     template_name="Acerca.html"
     def get(self,request):
         return render(request,self.template_name)
+    
+#CONECCION DE LA API DJANGO: 
+
+import requests
+from django.shortcuts import render
+from django.conf import settings
+
+def search_books(request):
+    api_key = settings.GOOGLE_BOOKS_API_KEY
+    query = request.GET.get('query', 'Django')  # Puedes cambiar 'Django' por cualquier consulta que desees
+    url = f'https://www.googleapis.com/books/v1/volumes?q={query}&key={api_key}'
+
+    response = requests.get(url)
+    data = response.json()
+
+    items = data.get('items', [])
+
+    context = {
+        'items': items,
+    }
+
+    return render(request, 'books/search_books.html', context)

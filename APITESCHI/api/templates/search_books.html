@@ -1,0 +1,15 @@
+<!-- search_books.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de búsqueda de libros</title>
+</head>
+<body>
+    <h1>Resultados de búsqueda de libros</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.volumeInfo.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
