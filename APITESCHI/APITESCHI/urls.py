@@ -14,9 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from api.views import Home,Login_p,servicios,personas,Acerca,search_books
-from django.urls import include
+from django.urls import path,include
+from api.views import Home,Login_p,servicios,Acerca,search_books,personas,tabla_personas,exportar_personas_csv
+
 
 
 urlpatterns = [
@@ -26,10 +26,11 @@ urlpatterns = [
     path('servicios/',servicios.as_view(),name='servicios'),
     path('Acerca/',Acerca.as_view(),name='Acerca'),
     path('personas/',personas.as_view(),name='personas'),
-    #path('tabla-personas/', tabla_personas, name='tabla_personas'),
-    #path('exportar-csv/', exportar_personas_csv, name='exportar_personas_csv'),
+    path('tabla-personas/', tabla_personas, name='tabla_personas'),
+    path('exportar-csv/', exportar_personas_csv, name='exportar_personas_csv'),
     path('search/', search_books, name='search_books'),
     path('admin/', admin.site.urls),
-    path('books/', include('myapp.urls')),        
+    #path('books/', include('APIDJANGOTOWER.urls')),  
+         
 ]
 

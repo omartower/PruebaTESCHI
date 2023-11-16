@@ -88,7 +88,7 @@ from django.conf import settings
 
 def search_books(request):
     api_key = settings.GOOGLE_BOOKS_API_KEY
-    query = request.GET.get('query', 'Django')  # Puedes cambiar 'Django' por cualquier consulta que desees
+    query = request.GET.get('query', '')  # Puedes cambiar 'Django' por cualquier consulta que desees
     url = f'https://www.googleapis.com/books/v1/volumes?q={query}&key={api_key}'
 
     response = requests.get(url)
@@ -100,4 +100,4 @@ def search_books(request):
         'items': items,
     }
 
-    return render(request, 'books/search_books.html', context)
+    return render(request, 'search_books.html', context)

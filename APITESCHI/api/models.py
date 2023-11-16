@@ -28,12 +28,12 @@ class Persona(models.Model):
     return self.nombre
     
 #Base de datos Login
-#class Usuario(models.Model):
- #   nombre = models.CharField(max_length=100)
-  #  email = models.EmailField()
-   # contraseña = models.CharField(max_length=100)
+class Usuario(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    contraseña = models.CharField(max_length=100)
 
-#class Registro(models.Model):
- #   usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-  #  fecha_registro = models.DateTimeField(auto_now_add=True)
+class Registro(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    fecha_registro = models.DateTimeField(auto_now_add=True)
             

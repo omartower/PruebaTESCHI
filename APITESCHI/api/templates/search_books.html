@@ -1,15 +1,27 @@
-<!-- search_books.html -->
+{%load static%}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados de búsqueda de libros</title>
+    <link rel="stylesheet" href="{% static 'css/search_books.css' %}">
 </head>
 <body>
-    <h1>Resultados de búsqueda de libros</h1>
-    <ul>
-        {% for item in items %}
-            <li>{{ item.volumeInfo.title }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Resultados de búsqueda de libros</h1>
+
+        <form action="{% url 'search_books' %}" method="get">
+            <label for="query">Buscar libros:</label>
+            <input type="text" id="query" name="query" value="{{ query }}" placeholder="Escribe aquí">
+            <button type="submit">Buscar</button>
+        </form>
+
+        <ul>
+            {% for item in items %}
+                <li>{{ item.volumeInfo.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
