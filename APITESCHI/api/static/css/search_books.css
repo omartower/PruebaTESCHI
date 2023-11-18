@@ -58,3 +58,24 @@ li {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+/* Estilos para el botón */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Efecto de transición en el cambio de color de fondo */
+}
+
+/* Estilo cuando el cursor está sobre el botón */
+.btn:hover {
+    background-color: #45a049; /* Cambia el color de fondo al pasar el cursor */
+}
+
+/* Estilo para el margen superior */
+.mt-4 {
+    margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+}

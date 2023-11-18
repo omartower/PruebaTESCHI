@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="{% static 'css/search_books.css' %}">
 </head>
 <body>
+
     <div class="container">
+        
         <h1>Resultados de búsqueda de libros</h1>
 
         <form action="{% url 'search_books' %}" method="get">
@@ -22,6 +24,9 @@
                 <li>{{ item.volumeInfo.title }}</li>
             {% endfor %}
         </ul>
+
+        <a href="{% url 'index'%}" class="btn mt-4">REGRESAR</a>
+        
     </div>
 </body>
 </html>
