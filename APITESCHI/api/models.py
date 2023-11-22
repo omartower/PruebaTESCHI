@@ -14,11 +14,12 @@ class Alumno(models.Model):
     idAlumno = models.IntegerField(primary_key=True, db_column='idAlumno')
     nameAlumno = models.CharField(max_length=100, db_column='nameAlumno')
     fk_genero = models.ForeignKey(Genero, on_delete=models.CASCADE)  # Agrega on_delete aquí
-    
+        
     class Meta:
         db_table = 'Alumnos'
 
 #Base de personas
+
 class Persona(models.Model):
    nombre = models.CharField(max_length=100)
    edad = models.PositiveIntegerField()
@@ -28,6 +29,7 @@ class Persona(models.Model):
     return self.nombre
     
 #Base de datos Login
+
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     email = models.EmailField()
