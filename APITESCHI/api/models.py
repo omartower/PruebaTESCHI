@@ -38,4 +38,19 @@ class Usuario(models.Model):
 class Registro(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     fecha_registro = models.DateTimeField(auto_now_add=True)
+
+#Base para agregar libros 
+from django.db import models
+
+class Libro(models.Model):
+    Nombre_Libro = models.CharField(max_length=255)
+    Autor = models.CharField(max_length=255)
+    Edicion = models.CharField(max_length=50)
+    Editorial = models.CharField(max_length=100)
+    Imagen = models.ImageField(upload_to='libros_imagenes/', null=True, blank=True)
+
+    def __str__(self):
+        return self.Nombre_Libro
+
+
             

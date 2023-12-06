@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from api.views import Home,Login_p,servicios,Acerca,search_books,personas,tabla_personas,exportar_personas_csv
-
+from api.views import Home,Login_p,servicios,Acerca,search_books,personas,tabla_personas,exportar_personas_csv,agregar_libro,lista_libros
+from api.views import editar_libro,eliminar_libro
 
 
 urlpatterns = [
@@ -30,6 +30,14 @@ urlpatterns = [
     path('exportar-csv/', exportar_personas_csv, name='exportar_personas_csv'),
     path('search/', search_books, name='search_books'),
     path('admin/', admin.site.urls),
+    path('agregar_libro/', agregar_libro, name='agregar_libro'),
+    path('lista_libros/', lista_libros, name='lista_libros'),
+    path('editar_libro/<int:libro_id>/', editar_libro, name='editar_libro'),
+    path('eliminar_libro/<int:libro_id>/', eliminar_libro, name='eliminar_libro'),
+ 
+    
+    
+    
     #path('books/', include('APIDJANGOTOWER.urls')),  
          
 ]

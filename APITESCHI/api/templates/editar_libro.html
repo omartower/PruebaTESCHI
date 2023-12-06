@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet"  href="{% static 'css/Editar_libro.css' %}">
+    <script src='main.js'></script>
+</head>
+<body>
+    <h2>Editar Libro</h2>
+    <form method="post" action="">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="{% url 'lista_libros' %}" class="btn mt-4">Cancelar</a>
+
+</body>
+</html>

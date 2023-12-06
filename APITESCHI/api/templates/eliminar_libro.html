@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet"  href="{% static 'css/eliminar_libro.css' %}">
+    <script src='main.js'></script>
+</head>
+<body>
+    <h2>Eliminar Libro</h2>
+    <p>¿Estás seguro de que deseas eliminar "{{ libro.Nombre_Libro }}"?</p>
+    <form method="post" action="">
+      {% csrf_token %}
+      <button type="submit">Eliminar</button>
+    </form>
+    <a href="{% url 'lista_libros' %}" class="btn mt-4">Cancelar</a>
+
+</body>
+</html>

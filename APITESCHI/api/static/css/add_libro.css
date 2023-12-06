@@ -1,0 +1,90 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        /* Estilos para el botón */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4caf50; /* Color de fondo del botón */
+            color: #fff; /* Color del texto del botón */
+            text-decoration: none; /* Elimina el subrayado del enlace */
+            border-radius: 4px; /* Bordes redondeados */
+            transition: background-color 0.3s ease; /* Efecto de transición en el cambio de color de fondo */
+        }
+        
+        /* Estilo cuando el cursor está sobre el botón */
+        .btn:hover {
+            background-color: #45a049; /* Cambia el color de fondo al pasar el cursor */
+        }
+        
+        /* Estilo para el margen superior */
+        .mt-4 {
+            margin-top: 0px; /* Ajusta el margen superior según tus necesidades */
+        }

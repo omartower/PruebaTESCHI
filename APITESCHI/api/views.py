@@ -101,3 +101,66 @@ def search_books(request):
     }
 
     return render(request, 'search_books.html', context)
+
+#Agregar libros
+
+from django.shortcuts import render, redirect
+from .models import Libro
+from .forms import LibroForm
+
+from django.shortcuts import render, redirect
+from .forms import LibroForm
+
+def agregar_libro(request):
+    if request.method == 'POST':
+        form = LibroForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = LibroForm()
+
+    return render(request, 'agregar_libro.html', {'form': form})
+
+
+#lista libros 
+
+from django.shortcuts import render
+from .models import Libro
+
+def lista_libros(request):
+    libros = Libro.objects.all()
+    return render(request, 'lista_libros.html', {'libros': libros})
+
+#editar y eliminar libros 
+
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Libro
+from .forms import LibroForm
+
+def lista_libros(request):
+    libros = Libro.objects.all()
+    return render(request, 'lista_libros.html', {'libros': libros})
+
+def editar_libro(request, libro_id):
+    libro = get_object_or_404(Libro, id=libro_id)
+
+    if request.method == 'POST':
+        form = LibroForm(request.POST, instance=libro)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_libros')
+    else:
+        form = LibroForm(instance=libro)
+
+    return render(request, 'editar_libro.html', {'form': form, 'libro': libro})
+
+def eliminar_libro(request, libro_id):
+    libro = get_object_or_404(Libro, id=libro_id)
+
+    if request.method == 'POST':
+        libro.delete()
+        return redirect('lista_libros')
+
+    return render(request, 'eliminar_libro.html', {'libro': libro})
+

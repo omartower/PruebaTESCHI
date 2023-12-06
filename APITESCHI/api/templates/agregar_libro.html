@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'css/add_libro.css'%}">
+    <title>Agregar Libro</title>
+</head>
+<body>
+
+  <h2>Agregar Libro</h2>
+  
+  <form method="post" action="{% url 'agregar_libro' %}" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+  <a href="{% url 'index'%}" class="btn mt-4">REGRESAR</a>
+</body>
+</html>

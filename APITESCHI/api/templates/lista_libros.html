@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'css/lista_libros.css' %}">
+    <title>Lista de Libros</title>
+</head>
+<body>
+
+  <h2>Lista de Libros</h2>
+
+  <table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Autor</th>
+            <th>Edición</th>
+            <th>Editorial</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for libro in libros %}
+            <tr>
+                <td>{{ libro.Nombre_Libro }}</td>
+                <td>{{ libro.Autor }}</td>
+                <td>{{ libro.Edicion }}</td>
+                <td>{{ libro.Editorial }}</td>
+                <td>
+                    {% if libro.Imagen %}
+                        <img src="{{ libro.Imagen.url }}" alt="{{ libro.Nombre_Libro }}" width="50">
+
+                    {% else %}
+                        Sin imagen
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{% url 'editar_libro' libro.id %}" class="btn-editar">Editar</a>
+                    <a href="{% url 'eliminar_libro' libro.id %}" class="btn-eliminar">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'index' %}" class="btn-regresar">REGRESAR</a>
+
+</body>
+</html>
