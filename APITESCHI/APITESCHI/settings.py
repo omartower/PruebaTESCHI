@@ -139,7 +139,10 @@ EMAIL_HOST_USER = 'omarcitob13b13@gmail.com'
 EMAIL_HOST_PASSWORD = 'hjkx blwk hfrx iucl'
 GOOGLE_BOOKS_API_KEY = 'AIzaSyD_lcP8pkTdaawe8fit1r3Rp0S9vxQICFY'
 
-# settings.py
+# Configuración de archivos estáticos
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+# Configuración de archivos de medios
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

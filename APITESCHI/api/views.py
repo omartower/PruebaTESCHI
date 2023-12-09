@@ -164,3 +164,72 @@ def eliminar_libro(request, libro_id):
 
     return render(request, 'eliminar_libro.html', {'libro': libro})
 
+#LOGIN 
+
+from django.contrib.auth import login, authenticate
+from django.shortcuts import render, redirect
+from .forms import RegistroForm, LoginForm
+
+def registro_usuario(request):
+    if request.method == 'POST':
+        form = RegistroForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('index')  
+    else:
+        form = RegistroForm()
+    return render(request, 'registro.html', {'form': form})
+
+def login_usuario(request):
+    if request.method == 'POST':
+        form = LoginForm(request, request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('index')  
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
+
+#Aqui termina login 
+
+from django.shortcuts import render
+from django.views import View
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
+class Login_p(View):
+    template_name = 'login_p.html'
+
+    def get(self, request):
+        form = AuthenticationForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            login(request, form.get_user())
+            return HttpResponseRedirect(reverse('index'))  # Redirige a la página principal después del inicio de sesión
+        return render(request, self.template_name, {'form': form})
+#Autenticacion de Login 
+from django.shortcuts import render, redirect
+from django.views import View
+from .forms import RegistroForm
+
+class RegistroView(View):
+    template_name = 'Login_p.html'
+
+    def get(self, request, *args, **kwargs):
+        form = RegistroForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = RegistroForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Puedes redirigir a donde quieras después del registro.
+            return redirect('index')
+        return render(request, self.template_name, {'form': form})

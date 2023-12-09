@@ -34,10 +34,17 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     email = models.EmailField()
     contraseña = models.CharField(max_length=100)
+    telefono = models.CharField(max_length=15, blank=True)
+    username = models.CharField(max_length=30, unique=True)
+
+    USERNAME_FIELD = 'username'
+
 
 class Registro(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     fecha_registro = models.DateTimeField(auto_now_add=True)
+
+
 
 #Base para agregar libros 
 from django.db import models
@@ -51,6 +58,4 @@ class Libro(models.Model):
 
     def __str__(self):
         return self.Nombre_Libro
-
-
-            
+    

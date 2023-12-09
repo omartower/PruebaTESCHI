@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from api.views import Home,Login_p,servicios,Acerca,search_books,personas,tabla_personas,exportar_personas_csv,agregar_libro,lista_libros
-from api.views import editar_libro,eliminar_libro
+from api.views import editar_libro,eliminar_libro,RegistroView
 
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('',Home.as_view(),name='index'),
-    path('login_p/',Login_p.as_view(),name='Login_p'),
+    path('login_p/', Login_p.as_view(), name='Login_p'),
     path('servicios/',servicios.as_view(),name='servicios'),
     path('Acerca/',Acerca.as_view(),name='Acerca'),
     path('personas/',personas.as_view(),name='personas'),
@@ -34,11 +34,15 @@ urlpatterns = [
     path('lista_libros/', lista_libros, name='lista_libros'),
     path('editar_libro/<int:libro_id>/', editar_libro, name='editar_libro'),
     path('eliminar_libro/<int:libro_id>/', eliminar_libro, name='eliminar_libro'),
- 
-    
-    
-    
+    path('registro/', RegistroView.as_view(), name='registro'),  # Cambia RegistroView por la vista real que maneja el registro.
+       
     #path('books/', include('APIDJANGOTOWER.urls')),  
          
 ]
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
