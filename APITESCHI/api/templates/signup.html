@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default"
+    data-assets-path="{% static '/'%}" data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Registro </title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+</head>
+
+<body>
+
+
+    <div class="container-xxl">
+        <div class="authentication-wrapper authentication-basic container-p-y">
+            <div class="authentication-inner">
+                <!-- Register Card -->
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Logo -->
+                        <div class="app-brand justify-content-center">
+
+
+                            </a>
+                        </div>
+                        <!-- /Logo -->
+                        <center>
+                            <h4 class="mb-2">Bienvenido </h4>
+                            <p class="mb-4">Registrate!</p>
+                            <p class="mb-4" style="color:red;">{{mensaje}}</p>
+                        </center>
+
+                        <form id="formAuthentication" class="mb-3" method="POST">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="first_name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name"
+                                    placeholder="Ingresa tu nombre" autofocus />
+                            </div>
+                            <div class="mb-3">
+                                <label for="last_name" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name"
+                                    placeholder="Ingresa tu apellido" autofocus />
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Matricula:</label>
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Ingresa tu matricula" autofocus />
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Ingresa tu correo " />
+                            </div>
+                            <div class="mb-3 form-password-toggle">
+                                <label class="form-label" for="password">Contraseña</label>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="password" class="form-control" name="password"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                        aria-describedby="password" />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terms-conditions"
+                                        name="terms" />
+                                    <label class="form-check-label" for="terms-conditions">
+                                        Estoy de acuerdo con:
+                                        <a href="javascript:void(0);">Politica de privacidad</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary d-grid w-100" type="submit">Registrar</button>
+                        </form>
+
+                        <p class="text-center">
+                            <span>Ya tienes una cuenta ?</span>
+                            <a href="{% url 'signin'%}">
+                                <span>Inicia sesion</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- Register Card -->
+            </div>
+        </div>
+    </div>
+
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>

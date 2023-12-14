@@ -139,6 +139,10 @@ EMAIL_HOST_USER = 'omarcitob13b13@gmail.com'
 EMAIL_HOST_PASSWORD = 'hjkx blwk hfrx iucl'
 GOOGLE_BOOKS_API_KEY = 'AIzaSyD_lcP8pkTdaawe8fit1r3Rp0S9vxQICFY'
 
+#Configuracion opcional del correo
+DEFAULT_FROM_EMAIL = 'omarcitob13b13@gmail.com'
+EMAIL_SUBJECT_PREFIX = ''
+
 # Configuración de archivos estáticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

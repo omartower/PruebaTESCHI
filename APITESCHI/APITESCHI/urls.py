@@ -13,10 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from api import views
 from django.contrib import admin
 from django.urls import path,include
 from api.views import Home,Login_p,servicios,Acerca,search_books,personas,tabla_personas,exportar_personas_csv,agregar_libro,lista_libros
-from api.views import editar_libro,eliminar_libro,RegistroView
+from api.views import editar_libro,eliminar_libro,RegistroView,upload_file
+
+
 
 
 urlpatterns = [
@@ -35,6 +38,14 @@ urlpatterns = [
     path('editar_libro/<int:libro_id>/', editar_libro, name='editar_libro'),
     path('eliminar_libro/<int:libro_id>/', eliminar_libro, name='eliminar_libro'),
     path('registro/', RegistroView.as_view(), name='registro'),  # Cambia RegistroView por la vista real que maneja el registro.
+    path('signin/', views.signin,name='signin'),
+    path('signup/', views.signup,name='signup'),
+    path('logout/',views.signout, name='logout'),
+    path('rest/',views.rest, name='rest'),
+    path('upload/', upload_file, name='upload_file'),
+    path('enviar-contrasena-temporal/<str:correo>/',views.enviar_contrasena_temporal, name='enviar-cotrasena-temporal'),
+    path('enviar_correo/<str:nombre>/<str:correo>/<str:apellido>/<str:usuario>/<str:contra>/', views.enviar_correo, name='enviar_correo'),
+     
        
     #path('books/', include('APIDJANGOTOWER.urls')),  
          

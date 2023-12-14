@@ -1,0 +1,78 @@
+/* signup.css */
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: #61707f7a; /* Color de fondo */
+  }
+  
+  .container-xxl {
+    margin-top: 50px;
+  }
+  
+  .authentication-wrapper {
+    background-color: #ffffff; /* Color del fondo del contenedor */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+  }
+  
+  .card {
+    border: none;
+  }
+  
+  .app-brand {
+    margin-bottom: 20px;
+  }
+  
+  .app-brand svg {
+    fill: #696cff; /* Color del logotipo */
+    width: 50px; /* Tamaño del logotipo */
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  h4 {
+    color: #343a40; /* Color del encabezado */
+  }
+  
+  .form-label {
+    color: #343a40; /* Color de las etiquetas del formulario */
+  }
+  
+  .form-control {
+    border: 1px solid #ced4da; /* Borde del campo de entrada */
+    border-radius: 0.25rem;
+  }
+  
+  .form-control:focus {
+    border-color: #696cff; /* Color del borde al enfocar */
+    box-shadow: 0 0 0 0.2rem rgba(105, 108, 255, 0.25); /* Sombra al enfocar */
+  }
+  
+  .btn-primary {
+    background-color: #696cff; /* Color del botón */
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #585bd4; /* Color del botón al pasar el ratón */
+  }
+  
+  .text-center {
+    margin-top: 20px;
+  }
+  
+  .text-center a {
+    color: #696cff; /* Color del enlace */
+  }
+  
+  .text-center a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón por el enlace */
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Puedes agregar más estilos según tus preferencias */
+  
