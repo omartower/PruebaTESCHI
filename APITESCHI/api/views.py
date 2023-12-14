@@ -198,6 +198,7 @@ def enviar_contrasena_temporal(request, username):
     usuario.set_password(contrasena_temporal)
     usuario.save()
 
+
     # Envía un correo electrónico con la contraseña temporal
     subject = 'Contraseña temporal'
     message = f'Tu contraseña temporal es: {contrasena_temporal}'

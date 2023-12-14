@@ -150,3 +150,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Configuración de archivos de medios
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Conexion con Postgresql
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Tower',
+        'USER': 'postgres',
+        'PASSWORD': 'omar123',
+        'HOST': 'localhost',  # O el host donde esté tu base de datos PostgreSQL
+        'PORT': '5432',       # Puerto por defecto de PostgreSQL
+    }
+}
